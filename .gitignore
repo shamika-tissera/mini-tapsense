@@ -207,3 +207,6 @@ marimo/_lsp/
 __marimo__/
 *.Identifier
 *.tex
+/.conda-pkgs
+/.conda-env
+/.venv312
