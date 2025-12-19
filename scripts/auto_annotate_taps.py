@@ -4,8 +4,7 @@ Generate Audacity-style label tracks for tap-like acoustic events.
 
 Outputs a tab-delimited file with: start_time_sec <TAB> end_time_sec <TAB> index
 
-Optionally uses ffmpeg
-for decoding and mono conversion.
+Optionally uses ffmpeg for decoding and mono conversion.
 """
 
 from __future__ import annotations
