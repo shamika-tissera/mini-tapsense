@@ -1,0 +1,14 @@
+# Core scientific stack
+numpy
+scipy
+pandas
+matplotlib
+scikit-learn
+
+# Audio + notebooks
+librosa
+ipython
+jupyter
+
+# System dependency (not installable via pip):
+# - `ffmpeg` is required to decode `.m4a`/`.mp3` inputs for `scripts/auto_annotate_taps.py`
