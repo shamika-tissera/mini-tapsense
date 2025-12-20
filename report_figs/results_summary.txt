@@ -1,0 +1,10 @@
+External test (full training set):
+  Rule-based: 0.667
+  k-NN:       0.683
+  RF:         0.517
+
+Key sweep points:
+   10%  n= 12  RB=0.650  kNN=0.583  RF=0.533
+   20%  n= 24  RB=0.667  kNN=0.633  RF=0.500
+   40%  n= 48  RB=0.667  kNN=0.683  RF=0.500
+  100%  n=120  RB=0.667  kNN=0.683  RF=0.517
