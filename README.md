@@ -4,17 +4,19 @@ Acoustic tap-gesture recognition on a personal device microphone.
 
 **Repo:** `https://github.com/shamika-tissera/mini-tapsense`
 
-## What’s in here
+## Repository layout
 - `main.ipynb`: end-to-end pipeline (load audio/labels → segment taps → FFT features → rule-based + k-NN → dataset-size sweep + confusion matrices).
-- `new_data/`: recorded 4-class dataset audio (`Knuckle.m4a`, `Pad.m4a`, `Nail tip tap.m4a`, `Nail tap.m4a`).
-- `labels/`: Audacity-style label tracks (`start\tend` per tap) for each class.
-- `scripts/auto_annotate_taps.py`: onset-based auto-label generator (used when label files are missing).
-- `acm_report.tex`: 2-page ACM-style report draft (includes figures from `report_figs/`).
-- `report_figs/`: figures used by the report (exported from notebook outputs).
+- `auto_annotate_and_visualize.ipynb`: helper notebook for label generation/inspection and visualization.
+- `data/train/`: training recordings (`*.m4a`) per gesture class.
+- `data/test/`: test recordings (`*-test.m4a`) per gesture class.
+- `labels/`: Audacity label tracks (`*.txt`) matching audio basenames (e.g. `data/train/Knuckle.m4a` → `labels/Knuckle.txt`).
+- `scripts/auto_annotate_taps.py`: onset-based auto-label generator (writes `.txt` label files).
+- `scripts/auto_annotate_taps.md`: usage notes + recommended labeling workflow.
 
-## Run Notebook
+## Run notebook
 1. Open and run `main.ipynb`.
-2. The notebook supports **4 classes**: `knuckle`, `pad`, `nail_tip_tap`, `nail_tap`.
-3. The dataset-size sweep will evaluate on:
-   - an external test set if you provide separate test recordings, or
-   - a stratified holdout split from the extracted features (fallback).
+2. The current dataset is split into:
+   - `data/train/` with labels in `labels/*.txt`
+   - `data/test/` with labels in `labels/*-test.txt`
+3. The notebook’s 4 gesture classes are derived from the filenames:
+   - `Knuckle`, `Pad`, `Nail tip tap`, `Nail tap`
